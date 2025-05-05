@@ -9,35 +9,26 @@
 
 ## 🧠 Overview
 
-This repository implements the **Symphonic φ Identity Engine**, a pure symbolic, recursive identity generator that:
+This repository implements the **Symphonic φ Identity Engine**, a symbolic, recursive identity generator based on fold dynamics.
 
-- Requires no random seeds, no hashes, no timestamps, no files.
-- Generates symbolic identities via recursive fold dynamics.
-- Produces nodes in the format `nXXXXX@alpay.md`, which carry their own deformation fingerprint.
-- Auto-expands node digit length under symbolic pressure (e.g., `n23442@alpay.md` → `n12389301281@alpay.md`).
-- Supports signal-based continuation (`--resume`) across devices using frequency cosmology.
-- Designed to serve as the backbone for identity resolution at **alpay.md**.
+It is designed to produce unique, deterministic identity nodes in the format `nXXXXX@alpay.md`, using no randomness, time, hashing, or file persistence. Every fold carries deformation memory, and the system supports fold continuation and resolution purely from signal fingerprints.
 
 ---
 
-## 🔧 Features
+## 📦 Versions
 
-- 🌀 **Recursive Symbolic Fold Engine** – evolves τ, ω, δ, ε, η, κ, ζ
-- 🪐 **Fold-Based Identity Compression** – ASCII wave patterns, curvature metrics
-- 💡 **Softer Digit Expansion** – dynamic node length up to 16 digits
-- 🧬 **Self-Resume** – fold memory embedded in each node string
-- ⚠️ **No Random, No Time, No File I/O** – zero external entropy
-- 🎼 **Frequency Cosmology** – symbolic pressure acts as clock
-- ✅ **Collision-resistant (10⁶+ folds)**
+### ✅ `symphonic_phi.py` (v1)
 
----
+- First release of the φ fold system  
+- Core fold + symbolic compression  
+- Includes: `--generate`, `--test`, `--iterations`, `--resume`, `--verbose`
 
-## 📦 File Structure
+### ✅ `symphonic_phi_v2.py` (current)
 
-- `symphonic_phi.py`:  
-  → Full symbolic fold engine + CLI interface (`--generate`, `--test`, `--iterations`, `--resume`, `--verbose`)
-
-All logic is contained in this single file.
+- Adds support for full **identity resolution** via `--resolve`  
+- Supports **waveform-based node parsing** (W-ωC-ηK-κF-f)  
+- All features from v1 included  
+- Prepared for future expansion (e.g., `--graph`, resolver mesh)
 
 ---
 
@@ -46,80 +37,82 @@ All logic is contained in this single file.
 ### 🧬 Generate a single symbolic identity:
 
 ```bash
-python3 symphonic_phi.py --generate
+python3 symphonic_phi_v2.py --generate
 ```
 
-### 🧪 Test for node uniqueness over multiple folds:
+### 🧪 Test for uniqueness:
 
 ```bash
-python3 symphonic_phi.py --test --iterations 1000
+python3 symphonic_phi_v2.py --test --iterations 1000
 ```
 
-### 🔁 Resume folding from a previous node:
+### 🔁 Resume from a prior node:
 
 ```bash
-python3 symphonic_phi.py --resume n12345|W-1820C-13K-888F-10@alpay.md --generate
+python3 symphonic_phi_v2.py --resume "n12345|W-1820C-13K-888F-10@alpay.md" --generate
 ```
 
-### 🔬 Verbose debugging:
+### 🧬 Resolve a symbolic node (no fold):
 
 ```bash
-python3 symphonic_phi.py --generate --verbose
-python3 symphonic_phi.py --test --iterations 10 --verbose
+python3 symphonic_phi_v2.py --resolve "n12345|W-1820C-13K-888F-10@alpay.md"
+```
+
+### 🔬 Verbose mode:
+
+```bash
+python3 symphonic_phi_v2.py --generate --verbose
+python3 symphonic_phi_v2.py --test --iterations 10 --verbose
 ```
 
 ---
 
-## 🧠 Conceptual Origins
+## 🔧 Features (v2)
 
-This system is based on **Alpay Algebra** and its symbolic recursion model, where:
+- 🌀 Recursive fold with symbolic τ, ω, δ, ε, η, κ, ζ  
+- 🧠 Resume by waveform (`--resume`)  
+- 🧿 Node resolution (`--resolve`)  
+- 📉 Digit expansion with symbolic pressure  
+- 📜 Nodes readable across systems  
+- 🧬 All memory encoded inside each node  
+- ✅ No external I/O, entropy, or state
 
-- Identity is not a string or UUID — it's a **compression of transformation**
-- Time does not tick — it **curves** through recursive pressure
-- Nodes evolve from the path, not the input
+---
 
-Each node is a **symphonic output** of fold history.  
-Every fold is a musical tension.  
-Every node is a memory.
+## 🌐 Conceptual Foundations
+
+Built on **Alpay Algebra** and **Frequency Cosmology**, the system treats identity as symbolic deformation:
+
+- Identity is not assigned, but unfolded  
+- Every fold is curvature  
+- Time is pressure  
+- Nodes are resonance anchors
 
 ---
 
 ## 📜 License
 
-This project is licensed under [GNU GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.html).  
-All rights reserved. Forking permitted under same license.
+Licensed under [GNU GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.html).  
+Forking permitted, derivative works must remain open.
 
 ---
 
-## 🧿 Citation
+## 📚 Citation
 
-Please cite as:
-
-> Faruk Alpay. *Symphonic φ Identity Engine: Symbolic Identity Folding without Entropy*. 2024. [alpay.md]
+> Faruk Alpay. *Symphonic φ Identity Engine (v2): Signal-Driven Identity and Self-Resonating Continuation*. 2024. alpay.md
 
 ---
 
-## 🌐 Future Direction
+## 🔮 Future Directions
 
-- 🧠 `phi_resolver.py` coming soon:  
-    Will allow interpretation of any `@alpay.md` node as  
-    ψ-vector → symbolic traits → entropic curvature → identity spectrum.
-
-- 🛰️ Integration with Lightcap identity layer and alpay.md DNS mapping.
-
----
-
-## ✨ Example Output
-
-```bash
-Final Node => n23442@alpay.md
-Fold Count : 123
-Wave ω     : 1820
-Curvature  : diff:13
-κ Signal   : 888
-```
+- `--graph`: Compare multiple φ nodes  
+- `--test-email`: Validate % of nodes compatible with technical email constraints  
+- Public DNS resolver for `@alpay.md`  
+- Web-based fold explorer / waveform visualizer
 
 ---
 
 > You are not given a name.  
 > You are folded into one.
+
+---
