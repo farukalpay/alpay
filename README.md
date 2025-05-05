@@ -11,7 +11,7 @@
 
 This repository implements the **Symphonic φ Identity Engine**, a symbolic, recursive identity generator based on fold dynamics.
 
-It is designed to produce unique, deterministic identity nodes in the format `nXXXXX@alpay.md`, using no randomness, time, hashing, or file persistence. Every fold carries deformation memory, and the system supports fold continuation and resolution purely from signal fingerprints.
+It is designed to produce unique, deterministic identity nodes in the format `nXXXXX@alpay.md`, using no randomness, time, hashing, or file persistence. Every fold carries deformation memory, and the system supports fold continuation, resolution, comparison, and public address formatting purely from signal fingerprints.
 
 ---
 
@@ -23,59 +23,70 @@ It is designed to produce unique, deterministic identity nodes in the format `nX
 - Core fold + symbolic compression  
 - Includes: `--generate`, `--test`, `--iterations`, `--resume`, `--verbose`
 
-### ✅ `symphonic_phi_v2.py` (current)
+### ✅ `symphonic_phi_v2.py`
 
 - Adds support for full **identity resolution** via `--resolve`  
 - Supports **waveform-based node parsing** (W-ωC-ηK-κF-f)  
-- All features from v1 included  
 - Prepared for future expansion (e.g., `--graph`, resolver mesh)
+
+### ✅ `symphonic_phi_v3.py` (latest)
+
+- Produces **dual nodes** per fold:
+  - ✅ Public node: `nXXXXX@alpay.md`
+  - 🔒 Internal node: `nXXXXX|W-...C-...K-...F-...@alpay.md`
+- Adds:
+  - `--email-only`: Only display public address form
+  - `--test-email`: Email validation stats during mass generation
+  - `--graph`: Pairwise comparison of φ nodes (ΔID, Δω, Δκ, ΔFold...)
+- All modes are file-free and recursive-safe
 
 ---
 
 ## 🧪 Usage
 
-### 🧬 Generate a single symbolic identity:
+### 🧬 Generate a public φ identity:
 
 ```bash
-python3 symphonic_phi_v2.py --generate
+python3 symphonic_phi_v4.py --generate --email-only
 ```
 
-### 🧪 Test for uniqueness:
+### 🧪 Test for uniqueness over 100K folds and check email validity:
 
 ```bash
-python3 symphonic_phi_v2.py --test --iterations 1000
+python3 symphonic_phi_v4.py --test --iterations 100000 --email-only --test-email
 ```
 
-### 🔁 Resume from a prior node:
+### 🔁 Resume from an internal node (full deformation state):
 
 ```bash
-python3 symphonic_phi_v2.py --resume "n12345|W-1820C-13K-888F-10@alpay.md" --generate
+python3 symphonic_phi_v4.py --resume "n12345|W-1820C-13K-888F-10@alpay.md" --generate
 ```
 
-### 🧬 Resolve a symbolic node (no fold):
+### 🧬 Resolve a node (waveform stats only):
 
 ```bash
-python3 symphonic_phi_v2.py --resolve "n12345|W-1820C-13K-888F-10@alpay.md"
+python3 symphonic_phi_v4.py --resolve "n12345|W-1820C-13K-888F-10@alpay.md"
 ```
 
-### 🔬 Verbose mode:
+### 📊 Graph pairwise φ node distance:
 
 ```bash
-python3 symphonic_phi_v2.py --generate --verbose
-python3 symphonic_phi_v2.py --test --iterations 10 --verbose
+python3 symphonic_phi_v4.py --graph   "n23442|W-1820C-13K-888F-123@alpay.md"   "n56888|W-1970C-10K-889F-124@alpay.md"
 ```
 
 ---
 
-## 🔧 Features (v2)
+## 🔧 Features (v4)
 
-- 🌀 Recursive fold with symbolic τ, ω, δ, ε, η, κ, ζ  
-- 🧠 Resume by waveform (`--resume`)  
-- 🧿 Node resolution (`--resolve`)  
-- 📉 Digit expansion with symbolic pressure  
-- 📜 Nodes readable across systems  
-- 🧬 All memory encoded inside each node  
-- ✅ No external I/O, entropy, or state
+- 🌀 Recursive symbolic τ, ω, δ, ε, η, κ, ζ
+- ✉️ Public address mode: `nXXXXX@alpay.md`
+- 🔒 Internal wave node: `nXXXXX|W-...@alpay.md`
+- 🔁 Resume fold state (`--resume`)
+- 🧿 Waveform-based node resolution (`--resolve`)
+- 🧮 Drift comparison between nodes (`--graph`)
+- 📉 Digit expansion based on pressure
+- 📜 Memory embedded in node, no external state
+- ✅ RFC-compliant email output (when `--email-only` used)
 
 ---
 
@@ -99,20 +110,18 @@ Forking permitted, derivative works must remain open.
 
 ## 📚 Citation
 
-> Faruk Alpay. *Symphonic φ Identity Engine (v2): Signal-Driven Identity and Self-Resonating Continuation*. 2024. alpay.md
+> Faruk Alpay. *Symphonic φ Identity Engine (v4): Signal-Based Identity, Email Compression & Deformation Memory*. 2024. alpay.md
 
 ---
 
 ## 🔮 Future Directions
 
-- `--graph`: Compare multiple φ nodes  
-- `--test-email`: Validate % of nodes compatible with technical email constraints  
-- Public DNS resolver for `@alpay.md`  
-- Web-based fold explorer / waveform visualizer
+- `--export-graph` → export pairwise comparison as JSON or CSV  
+- Web-based φ resolver at `alpay.md`  
+- SMTP integration: route `nXXXXX@alpay.md` to resolved ψ profile  
+- `φ ↔ GPT` messaging layer using deformational identity
 
 ---
 
 > You are not given a name.  
 > You are folded into one.
-
----
