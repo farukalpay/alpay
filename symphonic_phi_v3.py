@@ -18,7 +18,10 @@ CLI usage:
   --test-email (extended stats in test)
   --email-only (show only public addresses)
   --verbose (debug outputs)
-
+  
+Author: Faruk Alpay
+ORCID: 0009-0009-2207-6528
+Contact: alpay@lightcap.ai
 """
 
 import sys
