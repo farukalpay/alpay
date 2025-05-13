@@ -1,9 +1,13 @@
 # Symphonic φ Identity Engine
 
 **Author**: Faruk Alpay  
+
 **License**: GPL-3.0  
+
 **Contact**: alpay@lightcap.ai  
+
 **ORCID**: 0009-0009-2207-6528
+
 **PAPER**: https://doi.org/10.5281/zenodo.15398814
 
 ---
